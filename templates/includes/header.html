@@ -1,0 +1,215 @@
+{% load static %}
+<header>
+    <!--Start header-top-->
+    <div class="header-top bg-white py-4">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-12 col-lg-3 text-center text-lg-right">
+                    <div class="mb-0">
+                        <a href="#">
+                            <img src="{% static 'img/Group 1.png' %}" alt="" class="img-fluid"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <form action="#" class="search-box my-2 my-lg-0">
+                        <div class="input-group">
+                            <span class="input-group-text bg-transparent">جستوجو</span>
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="محصول مورد نظر شما ..."
+                            />
+                        </div>
+                        <button class="btn position-absolute">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <div
+                        class="col-12 col-lg-3 d-flex justify-content-lg-end register justify-content-between mt-3"
+                >
+                    <a href="Login.html" class="me-3 py-1 px-2"
+                    ><i class="fas fa-sign-in-alt me-1 align-middle"></i
+                    >ورود/ثبت‌نام</a
+                    >
+                    <a href="#" class="py-1 px-2"
+                    ><i class="fas fa-shopping-cart align-middle"></i>سبد خرید</a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End header top-->
+    <!--Start Menu-->
+    <div class="header-bottom bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="align-items-center justify-content-between d-lg-flex">
+                    <nav class="navbar navbar-light d-lg-none">
+                        <div class="container-fluid">
+                            <button
+                                    class="navbar-toggler"
+                                    type="button"
+                                    data-bs-toggle="offcanvas"
+                                    data-bs-target="#navbar-bottom"
+                                    aria-controls="navbar-bottom"
+                                    aria-label="Toggle navigation"
+                            >
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div
+                                    class="offcanvas offcanvas-start"
+                                    tabindex="-1"
+                                    id="navbar-bottom"
+                                    aria-labelledby="offcanvasNavbarLabel"
+                            >
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                                        <img src="{% static 'img/Group 1.png' %}" class="img-fluid"/>
+                                    </h5>
+                                    <button
+                                            type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="offcanvas"
+                                            aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <ul
+                                            class="navbar-nav justify-content-end flex-grow-1 pe-3"
+                                    >
+                                        <li class="nav-item me-1">
+                                            <a class="nav-link px-3" aria-current="page" href="#"
+                                            >صفحه اصلی</a
+                                            >
+                                        </li>
+                                        <li class="nav-item me-1">
+                                            <a class="nav-link px-3" aria-current="page" href="#"
+                                            >فروشگاه</a
+                                            >
+                                        </li>
+                                        <li class="nav-item me-1">
+                                            <a class="nav-link px-3" aria-current="page" href="#"
+                                            >سوالات متداول</a
+                                            >
+                                        </li>
+                                        <li class="nav-item me-1">
+                                            <a class="nav-link px-3" aria-current="page" href="#"
+                                            >تماس با ما</a
+                                            >
+                                        </li>
+                                        <li class="nav-item me-1">
+                                            <a
+                                                    class="nav-link px-3"
+                                                    aria-current="page"
+                                                    href="AboutUs.html"
+                                            >درباره ما</a
+                                            >
+                                        </li>
+                                        <li class="nav-item me-1">
+                                            <a class="nav-link px-3" aria-current="page" href="#"
+                                            >بلاگ</a
+                                            >
+                                        </li>
+                                        <li class="nav-item me-1">
+                                            <a class="nav-link px-3" aria-current="page" href="#"
+                                            >سفارشات</a
+                                            >
+                                        </li>
+                                        <li class="nav-item me-1">
+                                            <a class="nav-link px-3" aria-current="page" href="#"
+                                            >برند ها</a
+                                            >
+                                        </li>
+                                    </ul>
+                                    <a
+                                            href="#"
+                                            class="btn btn-danger btn-sm w-100 mx-auto mt-3"
+                                    >جشنواره بهاره</a
+                                    >
+                                    <hr class="my-4"/>
+                                    <div>
+                                        <h6 class="fw-bold">ما را دنبال کنید:</h6>
+                                        <div
+                                                class="d-flex align-items-center justify-content-start gap-3 mt-3"
+                                        >
+                                            <a href="#">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                            <a href="#">
+                                                <i class="fab fa-telegram"></i>
+                                            </a>
+                                            <a href="#">
+                                                <i class="fab fa-facebook"></i>
+                                            </a>
+                                            <a href="#">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <!--navbar for lg and more-->
+                    <nav class="navbar navbar-light d-lg-block d-none">
+                        <ul
+                                class="d-flex flex-row navbar-nav text-center ps-0 navbar-top"
+                        >
+                            <li class="nav-item me-1">
+                                <a class="nav-link px-3" aria-current="page" href="#"
+                                >صفحه اصلی</a
+                                >
+                            </li>
+                            <li class="nav-item me-1">
+                                <a class="nav-link px-3" aria-current="page" href="#"
+                                >فروشگاه</a
+                                >
+                            </li>
+                            <li class="nav-item me-1">
+                                <a class="nav-link px-3" aria-current="page" href="#"
+                                >سوالات متداول</a
+                                >
+                            </li>
+                            <li class="nav-item me-1">
+                                <a class="nav-link px-3" aria-current="page" href="#"
+                                >تماس با ما</a
+                                >
+                            </li>
+                            <li class="nav-item me-1">
+                                <a
+                                        class="nav-link px-3"
+                                        aria-current="page"
+                                        href="AboutUs.html"
+                                >درباره ما</a
+                                >
+                            </li>
+                            <li class="nav-item me-1">
+                                <a class="nav-link px-3" aria-current="page" href="#"
+                                >بلاگ</a
+                                >
+                            </li>
+                            <li class="nav-item me-1">
+                                <a class="nav-link px-3" aria-current="page" href="#"
+                                >سفارشات</a
+                                >
+                            </li>
+                            <li class="nav-item me-1">
+                                <a class="nav-link px-3" aria-current="page" href="#"
+                                >برند ها</a
+                                >
+                            </li>
+                        </ul>
+                    </nav>
+                    <a
+                            href="#"
+                            class="btn btn-danger btn-sm d-none d-lg-block festival-sell"
+                    ><i class="fas fa-star"></i> جشنواره بهاره</a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Menu-->
+</header>
