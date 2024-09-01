@@ -1,0 +1,42 @@
+.label-card {
+  transition: 0.3s;
+  border-radius: 15px;
+  box-shadow: 0 0 2rem #6a728727;
+  overflow: hidden;
+  .product-title small {
+    font-weight: 600;
+  }
+  .vote svg {
+    color: #fdd835;
+  }
+  .category-card-img {
+    overflow: hidden;
+    img {
+      width: 100;
+      display: block;
+      transition: 0.3s;
+    }
+    .overlay-card-category {
+      top: 10px;
+      right: 10px;
+      z-index: 100;
+      background-color: #6164a3;
+      padding: 5px 10px;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      border-radius: 10px;
+      box-shadow: 0 0 2rem #6a728727;
+
+      h5 {
+        font-size: 12px;
+      }
+    }
+  }
+  &:hover .category-card-img img {
+    transform: scale(1.05);
+  }
+  &:hover {
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+  }
+}

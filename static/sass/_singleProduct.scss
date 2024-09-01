@@ -1,0 +1,139 @@
+.product {
+  border-radius: 15px;
+  box-shadow: 0 0 2rem #6a728727;
+
+  .side-icon {
+    li {
+      a {
+        background-color: #e7edfa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        font-size: 15px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        color: #7b7da3;
+        padding: 5px;
+        &:hover {
+          background-color: #7b7da3;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.changer {
+  li {
+    border-radius: 10px !important;
+    box-shadow: 0 0 2rem #6a728727 !important;
+    overflow: hidden;
+  }
+}
+.line1 {
+  strong {
+    font-weight: 500 !important;
+    font-size: 13px;
+  }
+}
+.line2 {
+  strong {
+    font-weight: 600;
+    font-size: 16;
+  }
+  small {
+    font-size: 13px;
+    opacity: 0.8;
+    svg {
+      font-size: 10px;
+    }
+  }
+}
+.garanty,
+.colors {
+  select {
+    font-size: 13px;
+    color: gray;
+    line-height: 2;
+    option {
+      font-size: 13px;
+      color: gray;
+      line-height: 2;
+      padding: 20px 0;
+    }
+  }
+}
+.price-all {
+  padding: 15px 40px;
+  h6 {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  small {
+    font-size: 13px;
+  }
+  a {
+    display: block;
+
+    background-color: #5dc9ff;
+    color: #fff;
+    transition: 0.2s;
+    &:hover {
+      background-color: #437c98;
+      color: #fff;
+    }
+  }
+}
+.info-prudct {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 2rem #6a728727;
+  .filter-info-product {
+    li {
+      a {
+        color: #595b76;
+        font-size: 14px;
+        transition: 0.3s;
+        border-bottom: 1px solid transparent;
+      }
+    }
+  }
+}
+.filter-info-product li a.active {
+  color: #5dc9ff;
+  border-bottom: 1px solid #5dc9ff;
+}
+#tabone {
+  color: #595b76;
+  h5 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  small {
+    font-size: 12px;
+    opacity: 0.8;
+  }
+
+  table {
+    font-size: 13px;
+    border-spacing: 12px !important;
+    border-collapse: separate;
+  }
+  td {
+    padding: 10px 20px;
+    &:nth-child(1) {
+      width: 20%;
+      margin-left: 10px !important;
+    }
+  }
+}
+#tabtwo {
+  p {
+    font-size: 14px;
+    color: #595b76;
+    font-weight: 400;
+    line-height: 2;
+    text-align: justify;
+  }
+}

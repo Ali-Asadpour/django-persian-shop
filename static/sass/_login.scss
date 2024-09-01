@@ -1,0 +1,33 @@
+.login {
+  box-shadow: 0 0 2rem #6a728727;
+  border-radius: 15px;
+  overflow: hidden;
+  a {
+    color: #5bbeff;
+    font-size: 12px;
+    display: block;
+    text-align: left;
+  }
+  button {
+    background: #5bbeff;
+    color: #fff;
+
+    transition: 0.3s;
+    overflow: hidden;
+  }
+  button:hover {
+    background: #2e97de;
+    color: #fff;
+  }
+  .custom-check small {
+    font-size: 13px !important;
+    color: gray;
+    font-weight: 400;
+  }
+  .card-footer p {
+    font-size: 13px;
+  }
+  .card-footer a {
+    font-weight: 800;
+  }
+}

@@ -1,0 +1,379 @@
+@import "colors";
+@import "fonts";
+@import "homestyle";
+@import "about";
+@import "login";
+@import "ask";
+@import "category";
+@import "cart";
+@import "contact";
+@import "archiveblog";
+@import "singleblog";
+@import "archiveproduct";
+@import "panel";
+@import "singleProduct";
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/eot/iranyekanwebboldfanum.eot");
+  src: url("../fonts/eot/iranyekanwebboldfanum.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/woff/iranyekanwebboldfanum.woff") format("woff");
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 100;
+  src: url("../fonts/eot/iranyekanwebthinfanum.eot");
+  src: url("../fonts/eot/iranyekanwebthinfanum.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/woff/iranyekanwebthinfanum.woff") format("woff");
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/eot/iranyekanweblightfanum.eot");
+  src: url("../fonts/eot/iranyekanweblightfanum.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/woff/iranyekanweblightfanum.woff") format("woff");
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/eot/iranyekanwebregularfanum.eot");
+  src: url("../fonts/eot/iranyekanwebregularfanum.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/woff/iranyekanwebregularfanum.woff") format("woff");
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/eot/iranyekanwebmediumfanum.eot");
+  src: url("../fonts/eot/iranyekanwebmediumfanum.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/woff/iranyekanwebmediumfanum.woff") format("woff");
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/eot/iranyekanwebextraboldfanum.eot");
+  src: url("../fonts/eot/iranyekanwebextraboldfanum.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/woff/iranyekanwebextraboldfanum.woff") format("woff");
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/eot/iranyekanwebblackfanum.eot");
+  src: url("../fonts/eot/iranyekanwebblackfanum.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/woff/iranyekanwebblackfanum.woff") format("woff");
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/eot/iranyekanwebextrablackfanum.eot");
+  src: url("../fonts/eot/iranyekanwebextrablackfanum.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/woff/iranyekanwebextrablackfanum.woff") format("woff");
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+.card-hover-1 {
+  position: relative;
+  transition: 0.3s;
+  border-radius: 10px;
+  box-shadow: 0 0 2rem rgba(97, 100, 170, 0.1);
+}
+.card-hover-1 strong {
+  color: #262626 !important;
+}
+.card-hover-1:hover {
+  box-shadow: 0 0 2rem rgba(97, 100, 170, 0.4);
+  transform: translateY(-10px);
+}
+
+.slick-track {
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+}
+
+* {
+  font-family: iranyekan;
+  text-decoration: none !important;
+}
+
+body {
+  font-family: iranyekan;
+}
+
+/*=====================Header Top Style=====================*/
+.header-top .search-box {
+  box-shadow: none;
+  position: relative;
+}
+.header-top .search-box input,
+.header-top .search-box select,
+.header-top .search-box textarea {
+  border-radius: 10px;
+}
+.header-top .search-box input {
+  font-size: 14px;
+}
+.header-top .search-box button {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  color: #cfcfcf;
+  z-index: 4;
+}
+
+input::-moz-placeholder {
+  font-weight: 300;
+  font-size: 13px;
+}
+
+input::placeholder {
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.search-box .input-group-text {
+  font-size: 14px;
+  color: #666;
+  border-radius: 0 10px 10px 0;
+}
+
+.header-top .register a {
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+  color: #6164a3;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.header-top .register a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 22%;
+  height: 100%;
+  background: #f6f6f6;
+  border-radius: 50px 0 0 50px;
+  z-index: -1;
+  transition: 0.3s;
+}
+
+.header-top .register a:last-child::before {
+  width: 27% !important;
+}
+
+.header-top .register a:last-child:hover::before {
+  width: 100% !important;
+}
+
+.header-top .register a:hover::before {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/*header bottom style*/
+.header-bottom {
+  border-top: 1px solid #e6e6e6;
+}
+
+.header-bottom .navbar-top li a {
+  font-size: 14px;
+  color: #6164a3 !important;
+  position: relative;
+  z-index: 1;
+}
+
+.header-bottom .navbar-top li {
+  position: relative;
+  background: transparent !important;
+}
+
+.header-bottom .navbar-top li::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 0;
+  width: 0%;
+  border-bottom: 3px solid #6164a3;
+  transition: 0.3s;
+}
+
+.header-bottom .navbar-top li:hover::before {
+  width: 100%;
+}
+
+.header-bottom .festival-sell {
+  font-size: 13px;
+}
+
+.header-bottom .navbar-toggler {
+  box-shadow: none;
+}
+
+.header-bottom .navbar-toggler-icon {
+  font-size: 14px;
+}
+
+.header-bottom .navbar-toggler {
+  border: none;
+  cursor: pointer;
+}
+
+.offcanvas-body .navbar-nav a {
+  font-size: 14px;
+  color: #6164a3;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/*--------------------------------------------------------------------------------------*/ /*# sourceMappingURL=style.css.map */
+
+* {
+  font-family: iranyekan;
+  text-decoration: none !important;
+}
+
+body {
+  font-family: iranyekan;
+}
+/*=====================Header Top Style=====================*/
+.header-top {
+  .search-box {
+    box-shadow: none;
+    position: relative;
+
+    input,
+    select,
+    textarea {
+      border-radius: 10px;
+    }
+    input {
+      font-size: 14px;
+    }
+    button {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      color: #cfcfcf;
+      z-index: 4;
+    }
+  }
+}
+
+input::placeholder {
+  font-weight: 300;
+  font-size: 13px;
+}
+.search-box .input-group-text {
+  font-size: 14px;
+  color: #666;
+  border-radius: 0 10px 10px 0;
+}
+
+.header-top .register a {
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+  color: #6164a3;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.header-top .register a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 22%;
+  height: 100%;
+  background: #f6f6f6;
+  border-radius: 50px 0 0 50px;
+  z-index: -1;
+  transition: 0.3s;
+}
+.header-top .register a:last-child::before {
+  width: 27% !important;
+}
+.header-top .register a:last-child:hover::before {
+  width: 100% !important;
+}
+.header-top .register a:hover::before {
+  width: 100%;
+  border-radius: 5px;
+}
+/*header bottom style*/
+
+.header-bottom {
+  border-top: 1px solid #e6e6e6;
+}
+
+.header-bottom .navbar-top li a {
+  font-size: 14px;
+  color: #6164a3 !important;
+  position: relative;
+  z-index: 1;
+}
+.header-bottom .navbar-top li {
+  position: relative;
+  background: transparent !important;
+}
+.header-bottom .navbar-top li::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 0;
+
+  width: 0%;
+  border-bottom: 3px solid #6164a3;
+  transition: 0.3s;
+}
+.header-bottom .navbar-top li:hover::before {
+  width: 100%;
+}
+.header-bottom .festival-sell {
+  font-size: 13px;
+}
+.header-bottom .navbar-toggler {
+  box-shadow: none;
+}
+.header-bottom .navbar-toggler-icon {
+  font-size: 14px;
+}
+.header-bottom .navbar-toggler {
+  border: none;
+  cursor: pointer;
+}
+
+.offcanvas-body .navbar-nav a {
+  font-size: 14px;
+  color: #6164a3;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/*--------------------------------------------------------------------------------------*/

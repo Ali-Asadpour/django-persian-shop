@@ -1,0 +1,28 @@
+.breadcrumb-card {
+  border-radius: 15px;
+  box-shadow: 0 0 2rem rgba(97, 100, 180, 0.089);
+}
+.breadcrumb-about {
+  .breadcrumb-item {
+    font-size: 14px;
+    color: #505050;
+  }
+  .breadcrumb-item.active {
+    color: #08c;
+    font-weight: 700;
+  }
+}
+.about-us {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 2rem rgba(97, 100, 180, 0.089);
+  h5 {
+    font-weight: 800;
+  }
+  p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2;
+    text-align: justify;
+  }
+}

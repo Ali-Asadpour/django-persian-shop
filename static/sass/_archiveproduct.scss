@@ -1,0 +1,32 @@
+.pishnahad {
+  a {
+    background-color: rgba(83, 96, 157, 0.07);
+    color: #666666;
+    font-size: 11px;
+    transition: 0.3s;
+    font-weight: 300;
+    border-radius: 5px;
+    margin-bottom: 5px !important;
+    display: inline-block;
+    &:hover {
+      color: #fff;
+      background-color: #53609d;
+    }
+  }
+}
+.custom-check small {
+  font-size: 13px !important;
+  color: gray;
+  font-weight: 400;
+}
+.price-div {
+  justify-content: space-between;
+  small {
+    font-size: 11px;
+    opacity: 0.5;
+  }
+  p {
+    display: inline-block;
+    font-size: 12px;
+  }
+}

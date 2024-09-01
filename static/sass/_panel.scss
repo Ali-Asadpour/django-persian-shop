@@ -1,0 +1,222 @@
+.profile {
+  border-radius: 15px;
+  box-shadow: 0 0 2rem #6a728727;
+
+  .card-footer {
+    border-radius: 0 0 15px 15px;
+    background-color: rgba(83, 96, 157, 0.04);
+    a {
+      color: #9ea4c4;
+      font-size: 12px;
+      width: 50%;
+      text-align: center;
+    }
+  }
+}
+.profile-sidebar {
+  border-radius: 15px;
+  box-shadow: 0 0 2rem #6a728727;
+  .card-header {
+    p {
+      color: #fff;
+      display: inline-block;
+      background-color: rgba(83, 96, 157, 0.8);
+      font-size: 11px;
+      border-radius: 0 0 15px 15px;
+      margin-top: 0;
+      font-weight: 600;
+    }
+  }
+  .nav {
+    .nav-item {
+      .nav-link {
+        font-size: 12px;
+        color: #666666;
+        transition: 0.3s;
+      }
+      .nav-link.active {
+        background-color: rgba(83, 96, 157, 0.2);
+      }
+    }
+  }
+}
+.profile-content {
+  border-radius: 15px;
+  box-shadow: 0 0 2rem #6a728727;
+  .card-header {
+    p {
+      background-color: rgba(83, 96, 157, 0.8);
+      display: inline-block;
+      color: #fff;
+      font-size: 11px;
+      border-radius: 0 0 15px 15px;
+      font-weight: 600;
+    }
+  }
+}
+.info-user {
+  div {
+    width: 33%;
+  }
+  p:nth-child(1) {
+    font-size: 12px;
+    font-weight: 400;
+    color: #666666;
+    opacity: 0.7;
+  }
+  p:nth-child(2) {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666666;
+  }
+}
+.info-user-footer {
+  background-color: rgba(83, 96, 157, 0.04);
+  border-radius: 0 0 15px 15px !important;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(83, 96, 157, 0.8);
+    a {
+      color: #fff;
+    }
+  }
+  transition: 0.3s;
+  a {
+    color: #9ea4c4;
+    font-size: 13px;
+  }
+}
+.my-orders {
+  border-radius: 15px;
+  box-shadow: 0 0 2rem #6a728727;
+  .card-header {
+    p {
+      background-color: rgba(83, 96, 157, 0.8);
+      display: inline-block;
+      color: #fff;
+      font-size: 11px;
+      border-radius: 0 0 15px 15px;
+      font-weight: 600;
+    }
+  }
+  table {
+    font-size: 13px;
+  }
+}
+
+.my-favor {
+  border-radius: 15px;
+  box-shadow: 0 0 2rem #6a728727;
+
+  .card-header {
+    p {
+      background-color: rgba(83, 96, 157, 0.8);
+      display: inline-block;
+      color: #fff;
+      font-size: 11px;
+      border-radius: 0 0 15px 15px;
+      font-weight: 600;
+    }
+  }
+  .info-user2 {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px !important;
+    border-radius: 10px;
+    &:hover {
+      background-color: rgba(83, 96, 157, 0.04);
+    }
+    a {
+      color: #666666;
+      small:nth-child(2) {
+        color: #5bbeff;
+      }
+    }
+    .trash {
+      color: #7b7da3;
+      background-color: #e7edfa;
+      padding: 5px 9px !important;
+      border-radius: 10px;
+    }
+  }
+
+  img {
+    width: 15%;
+  }
+}
+.my-address {
+  border-radius: 15px;
+  box-shadow: 0 0 2rem #6a728727;
+
+  .card-header {
+    p {
+      background-color: rgba(83, 96, 157, 0.8);
+      display: inline-block;
+      color: #fff;
+      font-size: 11px;
+      border-radius: 0 0 15px 15px;
+      font-weight: 600;
+    }
+  }
+  table {
+    font-size: 13px;
+    color: #595b76 !important;
+    a {
+      color: #5bbeff;
+      font-size: 12px;
+    }
+  }
+  h6 {
+    font-size: 15px;
+  }
+  .card-body {
+    p {
+      font-size: 13px;
+      color: #666666;
+    }
+  }
+}
+.personal-info {
+  border-radius: 15px;
+  box-shadow: 0 0 2rem #6a728727;
+
+  .card-header {
+    p {
+      background-color: rgba(83, 96, 157, 0.8);
+      display: inline-block;
+      color: #fff;
+      font-size: 11px;
+      border-radius: 0 0 15px 15px;
+      font-weight: 600;
+    }
+  }
+}
+.personal-info {
+  .form-group {
+    span {
+      font-size: 13px;
+    }
+    input {
+      font-size: 12px;
+      color: #595b76;
+    }
+  }
+  textarea {
+    font-size: 12px;
+    color: #595b76;
+    line-height: 2;
+  }
+  small {
+    font-size: 13px !important;
+    font-weight: 600;
+  }
+  .save-btn {
+    background: #5bbeff;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    svg {
+      font-size: 10px;
+    }
+  }
+}

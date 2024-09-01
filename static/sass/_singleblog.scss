@@ -1,0 +1,138 @@
+.content-blog {
+  font-size: 14px;
+  border-radius: 15px;
+  box-shadow: 0 0 2rem #6a728727;
+
+  h5 {
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 25px;
+  }
+  p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 2.3;
+  }
+  .blog-info {
+    small {
+      font-weight: 300;
+      font-size: 13px;
+      background-color: rgba(102, 102, 102, 0.13);
+      border-radius: 40px;
+      cursor: pointer;
+    }
+  }
+  strong {
+    a {
+      color: #666;
+      font-size: 13px;
+      font-weight: 400;
+
+      &:hover {
+        color: #2e97de;
+        background-color: #e4f0ff !important;
+      }
+    }
+  }
+  .tags-blog {
+    border-top: 1px dashed silver !important;
+    border-bottom: 1px dashed silver !important ;
+  }
+  .ads-blog {
+    box-shadow: 0 0 2rem #6a728727 !important;
+    overflow: hidden;
+    transition: 0.3s;
+    border-radius: 15px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 2rem #2728392f !important;
+    }
+    a {
+      color: #666;
+      font-size: 15px;
+      font-weight: 600;
+      word-spacing: 4px;
+      &:hover {
+        color: #2e97de;
+      }
+    }
+  }
+  .arrows-btn {
+    a {
+      color: #595b76;
+      transition: 0.3s;
+      font-size: 16px;
+      font-weight: 600;
+      &:hover {
+        color: #0af;
+      }
+    }
+  }
+}
+.comments-blog {
+  p {
+    line-height: 1;
+    font-weight: 600;
+  }
+  small {
+    font-weight: 300;
+  }
+}
+.link-dl textarea::placeholder {
+  font-size: 13px;
+  font-weight: 300;
+  color: gray;
+}
+.form-comments {
+  strong {
+    font-size: 17;
+    font-weight: 800;
+
+    display: block;
+  }
+  button {
+    color: #fff;
+    background-color: #5bbeff;
+    border: 2px solid transparent;
+    transition: 0.3s;
+    &:hover {
+      color: #5bbeff;
+      background-color: #fff;
+      border: 2px solid #5bbeff;
+    }
+  }
+}
+.recent-comments {
+  border-radius: 15px;
+  box-shadow: 0 0 2rem #6a728727 !important;
+  h6 {
+    font-weight: 700;
+    font-size: 14px;
+  }
+  div {
+    margin-right: 5px;
+  }
+  p:nth-child(1) {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  p:nth-child(2) {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 2;
+    opacity: 0.7;
+    text-align: justify;
+  }
+  a {
+    font-size: 13px;
+    background-color: #5bbeff;
+    color: #fff;
+    transition: 0.3s;
+    border: 2px solid transparent;
+    &:hover {
+      background-color: #fff;
+      color: #5bbeff;
+      border-color: #5bbeff;
+    }
+  }
+}
