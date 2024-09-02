@@ -10,11 +10,15 @@ class ImageInline(admin.StackedInline):
     model = models.Image
 
 
+class GoodBadInline(admin.StackedInline):
+    model = models.GoodOrBadPoint
+
+
 @admin.register(models.Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ("show_image",'name', 'price', 'marketer',)
     fields = ["name","brand","category","color","marketer","price","discount","numbers","description", "sales"]
-    inlines = [ImageInline, ShortInfoInline]
+    inlines = [ImageInline, ShortInfoInline, GoodBadInline]
     list_filter = ['marketer', 'category',"brand"]
     search_fields = ['name']
 

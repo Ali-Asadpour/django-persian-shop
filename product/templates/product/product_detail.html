@@ -1,0 +1,610 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Product Detail
+{% endblock %}
+
+{% block content %}
+    <!--====================================Start Main========================================-->
+    <main>
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <div class="card border-0 breadcrumb-card">
+                        <div
+                                class="card-body d-flex flex-column flex-lg-row justify-content-between align-items-center"
+                        >
+                            <div
+                                    class="breadcrumb breadcrumb-about bg-transparent pb-0 mb-0"
+                            >
+                                <a href="{% url 'home:main' %}" class="breadcrumb-item"
+                                >فروشگاه اینترنتی همیار مارکت</a
+                                >
+                                <a href="#" class="breadcrumb-item">فروشگاه</a>
+                                <a href="{% url 'product:detail' product.id %}" class="breadcrumb-item active"
+                                >آیفون 13 پرومکس
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card border-0 product">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-lg-1 mb-3">
+                                    <ul class="nav ps-0 flex-column side-icon">
+                                        <li class="nav-item mb-2">
+                                            <a href="#" class="nav-link"
+                                            ><i class="fas fa-heart align-middle"></i
+                                            ></a>
+                                        </li>
+                                        <li class="nav-item mb-2">
+                                            <a href="#" class="nav-link"
+                                            ><i class="fas fa-share align-middle"></i
+                                            ></a>
+                                        </li>
+                                        <li class="nav-item mb-2">
+                                            <a href="#" class="nav-link"
+                                            ><i class="fas fa-chart-area align-middle"></i
+                                            ></a>
+                                        </li>
+                                        <li class="nav-item mb-2">
+                                            <a href="#" class="nav-link"
+                                            ><i class="fas fa-scale-balanced align-middle"></i
+                                            ></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div
+                                        class="col-12 col-lg-3 d-flex flex-column justify-content-between mb-3 mb-lg-0 px-3"
+                                >
+                                    <div></div>
+
+                                    <div class="tab-content">
+
+                                        {% for image in product.image_set.all %}
+                                            <div class="tab-pane fade {% if forloop.counter == 1 %}show active{% endif %} showlarg"
+                                                 id="img{{ image.id }}">
+                                                <a href="#" class="showlarg">
+                                                    <img
+                                                            src="{{ image.image.url }}"
+                                                            alt=""
+                                                            class="img-fluid"
+                                                    />
+                                                </a>
+                                            </div>
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="nav ps-0 flex-nowrap mt-2 changer gap-2">
+                                        {% for image in product.image_set.all %}
+                                            <li class="nav-item shadow-sm">
+                                                <a
+                                                        class="nav-link p-0"
+                                                        data-bs-toggle="tab"
+                                                        href="#img{{ image.id }}"
+                                                ><img
+                                                        src="{{ image.image.url }}"
+                                                        alt=""
+                                                        class="img-fluid"
+                                                />
+                                                </a>
+                                            </li>
+
+
+                                        {% endfor %}
+
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-8 col-12">
+                                    <div class="border-bottom d-flex flex-column flex-lg-row">
+                                        <h5 style="font-weight: 700">
+                                            {{ product.name }}
+                                        </h5>
+                                    </div>
+                                    <div class="my-4 border-bottom pb-4">
+                                        <div class="line1">
+                                            <strong>برند : <a href="#">{{ product.brand }}</a></strong>
+                                            <strong class="mx-lg-4"
+                                            >دسته بندی : <a href="#">{% for category in product.category.all %}
+                                                {{ category }} {% endfor %}</a></strong
+                                            >
+                                            <strong>مناسب : <a href="#">مرد / زن</a></strong>
+                                        </div>
+                                        <div class="line2 mt-3">
+                                            <strong class="me-0 me-lg-4">ویژگی های محصول : </strong>
+                                            {% for info in product.shortinfo_set.all %}
+                                                <small class="me-0 me-lg-4">
+                                                    <i
+                                                            class="fas fa-dot-circle align-middle text-muted"
+                                                    ></i>
+                                                    {{ info.title }}:{{ info.value }}                                            </small>
+                                            {% endfor %}
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-lg-7">
+                                            <div class="colors mb-5">
+                                                <h6 style="font-size: 15px; font-weight: 600">
+                                                    انتخاب رنگ مورد نظر
+                                                </h6>
+                                                <div class="mt-3">
+                                                    <form class="w-50">
+                                                        <div class="form-group">
+                                                            <select name="" id="" class="form-select">
+                                                                {% for color in product.color.all %}
+                                                                    <option value="{{ color.name }}">{{ color.name }}</option>
+                                                                {% endfor %}
+                                                            </select>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="garanty mb-5">
+                                                {#                                                <h6 style="font-size: 15px; font-weight: 600">#}
+                                                {#                                                    انتخاب گارانتی مورد نظر#}
+                                                {#                                                </h6>#}
+                                                {#                                                <div class="mt-3">#}
+                                                {#                                                    <form class="w-50">#}
+                                                {#                                                        <div class="form-group">#}
+                                                {#                                                            <select name="" id="" class="form-select">#}
+                                                {#                                                                <option value="one-year">#}
+                                                {#                                                                    گارانتی یک ساله ایرانیان#}
+                                                {#                                                                </option>#}
+                                                {#                                                                <option value="none-year">#}
+                                                {#                                                                    بدون گارانتی -مهلت تست 7 روزه#}
+                                                {#                                                                </option>#}
+                                                {#                                                            </select>#}
+                                                {#                                                        </div>#}
+                                                {#                                                    </form>#}
+                                                {#                                                </div>#}
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-5 price-all">
+                                            <h6>پیش فاکتور :</h6>
+                                            <div class="pb-2 mb-2 border-bottom">
+                                                <div
+                                                        class="d-flex align-items-center justify-content-between mb-3 mt-4"
+                                                >
+                                                    <small>کد محصول :</small>
+                                                    <small>{{ product.id }}</small>
+                                                </div>
+                                                <div
+                                                        class="d-flex align-items-center justify-content-between mb-3 mt-4"
+                                                >
+                                                    <small>فروشنده:</small>
+                                                    <small class="text-danger fw-bold">{{ product.marketer.get_full_name }}</small>
+                                                </div>
+                                                <div
+                                                        class="d-flex align-items-center justify-content-between mb-3 mt-4"
+                                                >
+                                                    <small>وضعیت:</small>
+                                                    <small class="text-success fw-bold"
+                                                    >{{ product.numbers }} عدد موجودی</small
+                                                    >
+                                                </div>
+                                            </div>
+                                            <div class="pb-2 mb-2 border-bottom">
+                                                <div
+                                                        class="d-flex align-items-center justify-content-between mb-3 mt-4"
+                                                >
+                                                    <small>قیمت واحد:</small>
+                                                    <small class="text-muted">{{ product.price }} تومان</small>
+                                                </div>
+                                            </div>
+                                            <div class="pb-2 mb-2">
+                                                <div
+                                                        class="d-flex align-items-center justify-content-between mb-3 mt-4"
+                                                >
+                                                    <small class="fw-bold">قیمت نهایی:</small>
+                                                    <small class="fw-bold">15,000,000 تومان</small>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="btn py-3"
+                                            ><i class="fas fa-cart-plus align-middle"></i>
+                                                افزودن به سبد خرید
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card border-0 info-prudct mb-3 mt-5">
+                        <div class="card-header bg-white pb-0">
+                            <ul class="nav ps-0 filter-info-product">
+                                <li class="nav-item">
+                                    <a
+                                            href="#tabone"
+                                            class="nav-link pb-3"
+                                            data-bs-toggle="tab"
+                                    >
+                                        <i class="fas fa-list-alt me-2"></i>مشخصات
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                            href="#tabtwo"
+                                            class="nav-link active pb-3"
+                                            data-bs-toggle="tab"
+                                    >
+                                        <i class="fas fa-question me-2"></i>نقد و بررسی
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                            href="#tabthree"
+                                            class="nav-link pb-3"
+                                            data-bs-toggle="tab"
+                                    >
+                                        <i class="fas fa-comment me-2"></i>نظرات کاربران
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <div class="tab-pane fade" id="tabone">
+                                    <h5 class="d-block">مشخصات کلی محصول :</h5>
+                                    <small>{{ product.name }}</small>
+                                    <div class="mt-5">
+                                        <p>مشخصات</p>
+                                        <table class="table table-borderless">
+                                            <tr class="">
+                                                <td class="bg-light rounded-pill">نام محصول</td>
+                                                <td class="bg-light rounded-pill">{{ product.name }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-light rounded-pill">رنگبندی محصول</td>
+                                                <td class="bg-light rounded-pill">
+                                                   {% for color in product.color.all %}
+                                                       {% if forloop.counter == 1 %}
+                                                           {{ color.name }}
+                                                       {% else %}
+                                                           | {{ color.name }}
+                                                       {% endif %}
+                                                    {% endfor %}
+                                                </td>
+                                            </tr>
+                                            {% for info in product.shortinfo_set.all %}
+                                            <tr>
+                                                <td class="bg-light rounded-pill">{{ info.title }}</td>
+                                                <td class="bg-light rounded-pill">{{ info.value }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade active show" id="tabtwo">
+                                    <p>
+                                        {{ product.description }}
+                                    </p>
+
+                                    <div class="row">
+                                        <div class="col-12 col-lg-4">
+                                            <p class="text-success">نقاط قوت :</p>
+                                            {% for point in product.goodorbadpoint_set.all %}
+                                                {% if point.good_or_bad == "good" %}
+                                                    <small class="mb-2 d-block">
+                                                        <i class="fas fa-plus text-success"></i>
+                                                        {{ point.name }}
+                                                    </small>
+                                                {% endif %}
+                                            {% endfor %}
+
+                                        </div>
+
+                                        <div class="col-12 col-lg-4">
+                                            <p class="text-danger">نقاط ضعف :</p>
+                                            {% for point in product.goodorbadpoint_set.all %}
+                                                {% if point.good_or_bad == "bad" %}
+                                                    <small class="mb-2 d-block">
+                                                        <i class="fas fa-minus text-danger"></i>
+                                                        {{ point.name }}
+                                                    </small>
+                                                {% endif %}
+                                            {% endfor %}
+
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="tabthree">
+                                    <div class="view-section px-5 mt-3">
+                                        <div class="card border-0 bg-light comments-blog">
+                                            <div class="card-body d-flex align-items-center">
+                                                <img
+                                                        src="{% static 'img/myprof.jpg' %}"
+                                                        alt="user img"
+                                                        class="img-fluid rounded-circle me-3"
+                                                        style="width: 5rem"
+                                                />
+                                                <div>
+                                                    <p>علی یوسفی گفته:</p>
+                                                    <small
+                                                            class="d-block mb-2"
+                                                            style="font-weight: 600; font-size: 12px"
+                                                    >13 دی 1401</small
+                                                    >
+                                                    <small>
+                                                        یه سوال در مورد واچ فیس های اپل واچ این واچ فیس
+                                                        های اپل واچ مثل ساعت های دیگه مثلا سامسونگ متنوع
+                                                        هستن؟ منظورم اینه که تو گلکسی استور واچ کلی واچ
+                                                        فیس هست که دولوپر های دیگه طراحیش کردن تو اپل واچ
+                                                        هم اینجوریه؟
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-comments mt-5">
+                                        <strong class="mb-0">دیدگاه تان را بنویسید:</strong><br/>
+                                        <small
+                                        >ایمیل شما منتشر نخواهد شد. لطفا تمامی کادر ها را بادقت
+                                            وارد کنید!</small
+                                        >
+                                        <form class="link-dl shadow-none mt-3">
+                                            <div class="input-group">
+                          <span class="input-group-text"
+                          >نام و نام خانوادگی</span
+                          >
+                                                <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        placeholder="لطفا نام و نام خانوادگی خود را وارد کنید"
+                                                />
+                                            </div>
+                                            <div class="input-group mt-3">
+                                                <span class="input-group-text">ایمیل</span>
+                                                <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        placeholder="لطفا ایمل خود را وارد کنید"
+                                                />
+                                            </div>
+                                            <div class="input-group my-3">
+                          <textarea
+                                  placeholder="متن پیام شما ..."
+                                  class="form-control"
+                                  rows="10"
+                                  style="resize: none"
+                          ></textarea>
+                                            </div>
+                                            <button class="btn px-3 py-1">ارسال نظر</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+{#                <div class="col-12">#}
+{#                    <div class="mt-4">#}
+{#                        <div class="container bg-transparent">#}
+{#                            <div class="bold text-center">#}
+{#                                <h5 class="d-block" style="font-weight: 800">#}
+{#                                    محصولات مرتبط#}
+{#                                </h5>#}
+{#                                <small#}
+{#                                        class="text-muted d-block text-center"#}
+{#                                        style="letter-spacing: 5px"#}
+{#                                >Related Productions</small#}
+{#                                >#}
+{#                            </div>#}
+{#                            <div class="row">#}
+{#                                <div class="col-12">#}
+{#                                    <div class="card border-0 shadow-none bg-transparent">#}
+{#                                        <div class="card-body">#}
+{#                                            <div class="slider-brands position-relative">#}
+{#                          <span class="my-slick-arrows next-arrow-newest"#}
+{#                          ><i class="fas fa-chevron-right"></i#}
+{#                          ></span>#}
+{#                                                <span class="my-slick-arrows prev-arrow-newest"#}
+{#                                                ><i class="fas fa-chevron-left"></i#}
+{#                                                ></span>#}
+{#                                                <div class="slider-newest">#}
+{#                                                    <!--card product1-->#}
+{#                                                    <div class="col-12 col-lg-3 px-2">#}
+{#                                                        <div class="card border-0 card-hover-2">#}
+{#                                                            <div class="card-img-top card-img-home">#}
+{#                                                                <div class="overlay-card"></div>#}
+{#                                                                <img#}
+{#                                                                        src="img/iphone1.jpg"#}
+{#                                                                        alt=""#}
+{#                                                                        class="img-fluid card-img-product"#}
+{#                                                                />#}
+{#                                                            </div>#}
+{#                                                            <div class="card-body">#}
+{#                                                                <a#}
+{#                                                                        href="#"#}
+{#                                                                        class="d-block text-center title-product"#}
+{#                                                                >گوشی آیفون 12 مدل128گیگ</a#}
+{#                                                                >#}
+{#                                                                <div#}
+{#                                                                        class="d-flex justify-content-between align-items-center mt-3"#}
+{#                                                                >#}
+{#                                                                    <small class="text-muted"#}
+{#                                                                    >28,000,000 تومان</small#}
+{#                                                                    >#}
+{#                                                                    <p class="mb-0">23,000,000 تومان</p>#}
+{#                                                                </div>#}
+{#                                                            </div>#}
+{#                                                            <div class="card-footer bg-transparent">#}
+{#                                                                <a href="#" class="btn d-block"#}
+{#                                                                ><i#}
+{#                                                                        class="fas fa-shopping-cart align-middle me-1"#}
+{#                                                                ></i#}
+{#                                                                >افزودن به سبد خرید</a#}
+{#                                                                >#}
+{#                                                            </div>#}
+{#                                                        </div>#}
+{#                                                    </div>#}
+{#                                                    <!--card product2-->#}
+{#                                                    <div class="col-12 col-lg-3 px-2">#}
+{#                                                        <div class="card border-0 card-hover-2">#}
+{#                                                            <div class="card-img-top card-img-home">#}
+{#                                                                <div class="overlay-card"></div>#}
+{#                                                                <img#}
+{#                                                                        src="img/iphone2.jpg"#}
+{#                                                                        alt=""#}
+{#                                                                        class="img-fluid card-img-product"#}
+{#                                                                />#}
+{#                                                            </div>#}
+{#                                                            <div class="card-body">#}
+{#                                                                <a#}
+{#                                                                        href="#"#}
+{#                                                                        class="d-block text-center title-product"#}
+{#                                                                >گوشی آیفون 12 مدل128گیگ</a#}
+{#                                                                >#}
+{#                                                                <div#}
+{#                                                                        class="d-flex justify-content-between align-items-center mt-3"#}
+{#                                                                >#}
+{#                                                                    <small class="text-muted"#}
+{#                                                                    >28,000,000 تومان</small#}
+{#                                                                    >#}
+{#                                                                    <p class="mb-0">23,000,000 تومان</p>#}
+{#                                                                </div>#}
+{#                                                            </div>#}
+{#                                                            <div class="card-footer bg-transparent">#}
+{#                                                                <a href="#" class="btn d-block"#}
+{#                                                                ><i#}
+{#                                                                        class="fas fa-shopping-cart align-middle me-1"#}
+{#                                                                ></i#}
+{#                                                                >افزودن به سبد خرید</a#}
+{#                                                                >#}
+{#                                                            </div>#}
+{#                                                        </div>#}
+{#                                                    </div>#}
+{#                                                    <!--card product3-->#}
+{#                                                    <div class="col-12 col-lg-3 px-2">#}
+{#                                                        <div class="card border-0 card-hover-2">#}
+{#                                                            <div class="card-img-top card-img-home">#}
+{#                                                                <div class="overlay-card"></div>#}
+{#                                                                <img#}
+{#                                                                        src="img/aw1.jpg"#}
+{#                                                                        alt=""#}
+{#                                                                        class="img-fluid card-img-product"#}
+{#                                                                />#}
+{#                                                            </div>#}
+{#                                                            <div class="card-body">#}
+{#                                                                <a#}
+{#                                                                        href="#"#}
+{#                                                                        class="d-block text-center title-product"#}
+{#                                                                >گوشی آیفون 12 مدل128گیگ</a#}
+{#                                                                >#}
+{#                                                                <div#}
+{#                                                                        class="d-flex justify-content-between align-items-center mt-3"#}
+{#                                                                >#}
+{#                                                                    <small class="text-muted"#}
+{#                                                                    >28,000,000 تومان</small#}
+{#                                                                    >#}
+{#                                                                    <p class="mb-0">23,000,000 تومان</p>#}
+{#                                                                </div>#}
+{#                                                            </div>#}
+{#                                                            <div class="card-footer bg-transparent">#}
+{#                                                                <a href="#" class="btn d-block"#}
+{#                                                                ><i#}
+{#                                                                        class="fas fa-shopping-cart align-middle me-1"#}
+{#                                                                ></i#}
+{#                                                                >افزودن به سبد خرید</a#}
+{#                                                                >#}
+{#                                                            </div>#}
+{#                                                        </div>#}
+{#                                                    </div>#}
+{#                                                    <!--card product4-->#}
+{#                                                    <div class="col-12 col-lg-3 px-2">#}
+{#                                                        <div class="card border-0 card-hover-2">#}
+{#                                                            <div class="card-img-top card-img-home">#}
+{#                                                                <div class="overlay-card"></div>#}
+{#                                                                <img#}
+{#                                                                        src="img/head2.jpg"#}
+{#                                                                        alt=""#}
+{#                                                                        class="img-fluid card-img-product"#}
+{#                                                                />#}
+{#                                                            </div>#}
+{#                                                            <div class="card-body">#}
+{#                                                                <a#}
+{#                                                                        href="#"#}
+{#                                                                        class="d-block text-center title-product"#}
+{#                                                                >گوشی آیفون 12 مدل128گیگ</a#}
+{#                                                                >#}
+{#                                                                <div#}
+{#                                                                        class="d-flex justify-content-between align-items-center mt-3"#}
+{#                                                                >#}
+{#                                                                    <small class="text-muted"#}
+{#                                                                    >28,000,000 تومان</small#}
+{#                                                                    >#}
+{#                                                                    <p class="mb-0">23,000,000 تومان</p>#}
+{#                                                                </div>#}
+{#                                                            </div>#}
+{#                                                            <div class="card-footer bg-transparent">#}
+{#                                                                <a href="#" class="btn d-block"#}
+{#                                                                ><i#}
+{#                                                                        class="fas fa-shopping-cart align-middle me-1"#}
+{#                                                                ></i#}
+{#                                                                >افزودن به سبد خرید</a#}
+{#                                                                >#}
+{#                                                            </div>#}
+{#                                                        </div>#}
+{#                                                    </div>#}
+{#                                                    <!--card product5-->#}
+{#                                                    <div class="col-12 col-lg-3 px-2">#}
+{#                                                        <div class="card border-0 card-hover-2">#}
+{#                                                            <div class="card-img-top card-img-home">#}
+{#                                                                <div class="overlay-card"></div>#}
+{#                                                                <img#}
+{#                                                                        src="img/air1.jpg"#}
+{#                                                                        alt=""#}
+{#                                                                        class="img-fluid card-img-product"#}
+{#                                                                />#}
+{#                                                            </div>#}
+{#                                                            <div class="card-body">#}
+{#                                                                <a#}
+{#                                                                        href="#"#}
+{#                                                                        class="d-block text-center title-product"#}
+{#                                                                >گوشی آیفون 12 مدل128گیگ</a#}
+{#                                                                >#}
+{#                                                                <div#}
+{#                                                                        class="d-flex justify-content-between align-items-center mt-3"#}
+{#                                                                >#}
+{#                                                                    <small class="text-muted"#}
+{#                                                                    >28,000,000 تومان</small#}
+{#                                                                    >#}
+{#                                                                    <p class="mb-0">23,000,000 تومان</p>#}
+{#                                                                </div>#}
+{#                                                            </div>#}
+{#                                                            <div class="card-footer bg-transparent">#}
+{#                                                                <a href="#" class="btn d-block"#}
+{#                                                                ><i#}
+{#                                                                        class="fas fa-shopping-cart align-middle me-1"#}
+{#                                                                ></i#}
+{#                                                                >افزودن به سبد خرید</a#}
+{#                                                                >#}
+{#                                                            </div>#}
+{#                                                        </div>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+            </div>
+        </div>
+    </main>
+{% endblock %}

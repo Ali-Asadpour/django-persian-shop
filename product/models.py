@@ -70,7 +70,6 @@ class Product(models.Model):
     discount = models.IntegerField(verbose_name="تخفیف", choices=discount_list, default=0)
     numbers = models.IntegerField(default=1,verbose_name="تعداد موجودی")
     description = models.TextField(verbose_name="توضیحات")
-    slug = models.SlugField(verbose_name="اسم در دامنه",null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="تاریخ ایجاد محصول")
     sales = models.IntegerField(default=0, verbose_name="تعداد فروش")
 
@@ -124,3 +123,16 @@ class Image(models.Model):
 
 
 
+
+
+class GoodOrBadPoint(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name="محصول")
+    good_or_bad= models.CharField(max_length=50,choices=(("good", "ویژگی مثبت"),("bad", "ویژگی منفی")), default="good", verbose_name="انتخاب کنید")
+    name = models.CharField(max_length=50, verbose_name="ویژگی مدنظر")
+
+    class Meta:
+        verbose_name = "نقطه قوت یا ضعف"
+        verbose_name_plural = "نقاط قوت یا ضعف"
+
+    def __str__(self):
+        return self.name
