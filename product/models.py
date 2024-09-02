@@ -94,6 +94,11 @@ class Product(models.Model):
     show_image.short_description = "عکس"
 
 
+    def get_total_price(self):
+        total_price = self.price-(self.price*self.discount/100)
+        return int(total_price)
+
+
 
 
 

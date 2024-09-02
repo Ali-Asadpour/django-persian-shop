@@ -203,9 +203,16 @@
                                                         class="d-flex align-items-center justify-content-between mb-3 mt-4"
                                                 >
                                                     <small class="fw-bold">قیمت نهایی:</small>
-                                                    <small class="fw-bold">15,000,000 تومان</small>
+                                                    <small class="fw-bold">{{ product.get_total_price}} تومان</small>
                                                 </div>
+                                                {% if product.discount != 0 %}
+                                                    <small class="fw-bold">باتخفیف {{ product.discount }} درصدی</small>
+                                                {% endif %}
                                             </div>
+
+
+
+
                                             <a href="#" class="btn py-3"
                                             ><i class="fas fa-cart-plus align-middle"></i>
                                                 افزودن به سبد خرید
