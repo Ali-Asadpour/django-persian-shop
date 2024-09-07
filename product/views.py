@@ -10,3 +10,11 @@ class ProductDetailView(View):
         product = get_object_or_404(Product, id=id)
         return render(request, "product/product_detail.html", {"product": product})
 
+
+
+
+
+
+class ProductListView(View):
+    def get(self, request):
+        return render(request, "product/product_list.html", {})
